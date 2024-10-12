@@ -1,0 +1,39 @@
+name: flutter_unified_map_flutter_map
+description: Pure Dart implementation of flutter_unified_map on flutter_map, used on web, Windows and Linux and in tests.
+version: 0.1.0
+repository: https://github.com/AlphaByte/flutter_unified_map
+issue_tracker: https://github.com/AlphaByte/flutter_unified_map/issues
+topics:
+  - map
+  - flutter-map
+  - flutter-plugin
+resolution: workspace
+
+environment:
+  sdk: ^3.5.0
+  flutter: ">=3.24.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_map: ^7.0.2
+  flutter_web_plugins:
+    sdk: flutter
+  flutter_unified_map_platform_interface: ^0.1.0
+
+dev_dependencies:
+  flutter_lints: ^4.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  plugin:
+    implements: flutter_unified_map
+    platforms:
+      web:
+        pluginClass: UnifiedMapsFlutterMap
+        fileName: flutter_unified_map_flutter_map.dart
+      windows:
+        dartPluginClass: UnifiedMapsFlutterMap
+      linux:
+        dartPluginClass: UnifiedMapsFlutterMap

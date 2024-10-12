@@ -1,0 +1,13 @@
+name: flutter_unified_map_workspace
+publish_to: none
+
+environment:
+  sdk: ^3.5.0
+
+workspace:
+  - packages/flutter_unified_map
+  - packages/flutter_unified_map_platform_interface
+  - packages/flutter_unified_map_android
+  - packages/flutter_unified_map_apple
+  - packages/flutter_unified_map_flutter_map
+  - example
