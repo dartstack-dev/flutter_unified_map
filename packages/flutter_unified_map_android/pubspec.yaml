@@ -11,13 +11,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_plugin_android_lifecycle: ^2.0.23
+  flutter_plugin_android_lifecycle: ^2.0.24
   latlong2: ^0.9.1
   meta: ^1.16.0
   flutter_unified_map_platform_interface: ^0.1.0
 
 dev_dependencies:
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter
   pigeon: 22.2.0
