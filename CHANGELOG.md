@@ -1,3 +1,7 @@
+## 0.3.0 (2025-02-15)
+
+- `MapCamera` and event-stream fixes; tile-layer behaviour aligned between backends.
+
 ## 0.2.0 (2024-12-27)
 
 - The Android and Apple Dart plugins no longer touch the binary messenger in `registerWith`, which the plugin registrant calls before `main()` (the app failed at startup with "UnifiedMapsPlatform.instance is not set").
