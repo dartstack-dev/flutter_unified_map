@@ -1,6 +1,6 @@
 name: flutter_unified_map_android
 description: Android implementation of flutter_unified_map on the Google Maps SDK for Android.
-version: 0.3.0
+version: 0.4.0
 repository: https://github.com/AlphaByte/flutter_unified_map
 resolution: workspace
 
@@ -14,7 +14,7 @@ dependencies:
   flutter_plugin_android_lifecycle: ^2.0.24
   latlong2: ^0.9.1
   meta: ^1.16.0
-  flutter_unified_map_platform_interface: ^0.3.0
+  flutter_unified_map_platform_interface: ^0.4.0
 
 dev_dependencies:
   flutter_lints: ^5.0.0

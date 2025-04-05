@@ -1,3 +1,8 @@
+## 0.4.0 (2025-04-05)
+
+- New `package:flutter_unified_map/plugin_api.dart` for extension packages: `MapLayerState` (with `setPolylines` / `setFlutterMapLayers`), `MapLayerHost` (`liveCamera` on every move event, `idleCamera`, `supportsFlutterMapLayers`), `MarkerPublisher` / `MarkerSpec` (atomic marker generations), `MarkerTransition`, `LayerRegistry`, `IconCache`, `integerZoom`.
+- `FlutterMapLayer(child:)`: a raw flutter_map layer drawn inside the map on web, Windows and Linux, ignored on native maps.
+
 ## 0.3.0 (2025-02-15)
 
 - `MapCamera` and event-stream fixes; tile-layer behaviour aligned between backends.
