@@ -2,7 +2,7 @@ name: flutter_unified_map_workspace
 publish_to: none
 
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.6.0
 
 workspace:
   - packages/flutter_unified_map
