@@ -38,7 +38,7 @@ animated split and merge). Packages that add their own layers build on `package:
 
 ```yaml
 dependencies:
-  flutter_unified_map: ^0.5.0
+  flutter_unified_map: ^0.6.0
 ```
 
 The platform packages (`flutter_unified_map_android`, `flutter_unified_map_apple`, `flutter_unified_map_flutter_map`) are endorsed and

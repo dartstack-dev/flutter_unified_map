@@ -1,3 +1,7 @@
+## 0.6.0 (2026-01-17)
+
+- Hit-testing and camera fixes; example polish.
+
 ## 0.5.0 (2025-10-08)
 
 - BREAKING: flutter_map 8.2.2 (from 7.0.2); Dart 3.6 / Flutter 3.27.
