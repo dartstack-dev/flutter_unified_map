@@ -1,6 +1,6 @@
 name: flutter_unified_map_platform_interface
 description: Common platform interface for the flutter_unified_map plugin (native Google Maps on Android, MapKit on iOS/macOS, flutter_map elsewhere).
-version: 0.7.0
+version: 0.8.0
 repository: https://github.com/AlphaByte/flutter_unified_map
 resolution: workspace
 
@@ -11,7 +11,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  latlong2: ^0.9.1
+  latlong2: ">=0.9.1 <0.11.0"
   meta: ^1.17.0
   plugin_platform_interface: ^2.1.8
 

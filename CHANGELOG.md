@@ -1,3 +1,7 @@
+## 0.8.0 (2026-07-15)
+
+- Upgrade packages: flutter_map 8.3.1, latlong2 0.10.
+
 ## 0.7.0 (2026-04-28)
 
 - Upgrade packages: flutter_map 8.3.0.
