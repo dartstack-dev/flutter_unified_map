@@ -1,6 +1,6 @@
 name: flutter_unified_map
 description: Native maps for Flutter with a flutter_map-style API - Google Maps on Android, Apple MapKit on iOS and macOS, flutter_map on web and desktop. Markers, polylines, polygons, circles, tiles.
-version: 0.8.0
+version: 0.9.0
 repository: https://github.com/AlphaByte/flutter_unified_map
 topics:
   - map
@@ -10,8 +10,8 @@ topics:
 resolution: workspace
 
 environment:
-  sdk: ^3.6.0
-  flutter: ">=3.27.0"
+  sdk: ^3.13.0
+  flutter: ">=3.47.0"
 
 dependencies:
   flutter:
@@ -21,10 +21,10 @@ dependencies:
   flutter_map: ^8.3.1
   latlong2: ">=0.9.1 <0.11.0"
   meta: ^1.17.0
-  flutter_unified_map_android: ^0.8.0
-  flutter_unified_map_apple: ^0.8.0
-  flutter_unified_map_flutter_map: ^0.8.0
-  flutter_unified_map_platform_interface: ^0.8.0
+  flutter_unified_map_android: ^0.9.0
+  flutter_unified_map_apple: ^0.9.0
+  flutter_unified_map_flutter_map: ^0.9.0
+  flutter_unified_map_platform_interface: ^0.9.0
 
 dev_dependencies:
   flutter_lints: ^6.0.0

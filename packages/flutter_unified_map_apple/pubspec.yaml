@@ -1,6 +1,6 @@
 name: flutter_unified_map_apple
 description: iOS and macOS implementation of flutter_unified_map on Apple MapKit (MKMapView).
-version: 0.8.0
+version: 0.9.0
 repository: https://github.com/AlphaByte/flutter_unified_map
 issue_tracker: https://github.com/AlphaByte/flutter_unified_map/issues
 topics:
@@ -10,21 +10,21 @@ topics:
 resolution: workspace
 
 environment:
-  sdk: ^3.6.0
-  flutter: ">=3.27.0"
+  sdk: ^3.13.0
+  flutter: ">=3.47.0"
 
 dependencies:
   flutter:
     sdk: flutter
   latlong2: ">=0.9.1 <0.11.0"
   meta: ^1.17.0
-  flutter_unified_map_platform_interface: ^0.8.0
+  flutter_unified_map_platform_interface: ^0.9.0
 
 dev_dependencies:
   flutter_lints: ^6.0.0
   flutter_test:
     sdk: flutter
-  pigeon: 25.0.0
+  pigeon: 28.0.0
 
 flutter:
   plugin:

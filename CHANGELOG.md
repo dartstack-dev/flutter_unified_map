@@ -1,3 +1,8 @@
+## 0.9.0 (2026-09-14)
+
+- Upgrade packages: Dart 3.13, Flutter 3.47, Pigeon 28.
+- Camera and tile parity fixes across backends.
+
 ## 0.8.0 (2026-07-15)
 
 - Upgrade packages: flutter_map 8.3.1, latlong2 0.10.
