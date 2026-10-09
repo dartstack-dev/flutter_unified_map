@@ -57,7 +57,7 @@ inside the map on web, Windows and Linux and ignored on native maps.
 
 ```yaml
 dependencies:
-  flutter_unified_map: ^0.9.0
+  flutter_unified_map: ^1.0.0
 ```
 
 The platform packages (`flutter_unified_map_android`, `flutter_unified_map_apple`, `flutter_unified_map_flutter_map`) are endorsed and

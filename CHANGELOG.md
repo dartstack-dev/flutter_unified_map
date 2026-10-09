@@ -1,3 +1,10 @@
+## 1.0.0 (2026-10-09)
+
+- First stable release: the `flutter_map`-style API is complete on every backend, with marker transitions, integration tests and the example app.
+- `MapLayerHost.liveCamera` also follows `MapOptions` zoom bounds; `IconCache.clear` drops renders still in flight.
+- `setFlutterMapLayers` receives every layer's widgets wrapped in a `KeyedSubtree` keyed by layer id and position, so a stateful flutter_map layer (flutter_map_marker_cluster's) keeps its state when a layer before it is added or removed.
+- Clustering lives in the separate package `flutter_unified_map_marker_cluster` (API of flutter_map_marker_cluster); `flutter_unified_map` itself has no cluster layer.
+
 ## 0.9.0 (2026-09-14)
 
 - Upgrade packages: Dart 3.13, Flutter 3.47, Pigeon 28.
