@@ -11,10 +11,15 @@ void main() => runApp(const ExampleApp());
 class ExampleApp extends StatelessWidget {
   const ExampleApp({super.key});
 
-  static const _seed = Color(0xFF0F766E);
+  // dartstack.dev accents: green-400 in light mode, green-300 in dark mode
+  static const _seedLight = Color(0xFF409C3D);
+  static const _seedDark = Color(0xFF8EEA88);
 
   ThemeData _theme(Brightness brightness) => ThemeData(
-    colorScheme: ColorScheme.fromSeed(seedColor: _seed, brightness: brightness),
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: brightness == Brightness.light ? _seedLight : _seedDark,
+      brightness: brightness,
+    ),
     snackBarTheme: const SnackBarThemeData(behavior: SnackBarBehavior.floating),
   );
 
@@ -24,6 +29,12 @@ class ExampleApp extends StatelessWidget {
     debugShowCheckedModeBanner: false,
     theme: _theme(Brightness.light),
     darkTheme: _theme(Brightness.dark),
+    // ?brightness= is set by the site embedding the app, so it matches the page theme
+    themeMode: switch (Uri.base.queryParameters['brightness']) {
+      'dark' => ThemeMode.dark,
+      'light' => ThemeMode.light,
+      _ => ThemeMode.system,
+    },
     home: const DemoShell(),
   );
 }
