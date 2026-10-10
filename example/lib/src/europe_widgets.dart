@@ -55,10 +55,7 @@ class _CapitalPinPainter extends CustomPainter {
       } else {
         path.lineTo(center.dx + radius * math.cos(outer), center.dy + radius * math.sin(outer));
       }
-      path.lineTo(
-        center.dx + radius * 0.4 * math.cos(inner),
-        center.dy + radius * 0.4 * math.sin(inner),
-      );
+      path.lineTo(center.dx + radius * 0.4 * math.cos(inner), center.dy + radius * 0.4 * math.sin(inner));
     }
     canvas.drawPath(path..close(), paint);
   }

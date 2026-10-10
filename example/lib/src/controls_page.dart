@@ -55,7 +55,13 @@ class _ControlsPageState extends State<ControlsPage> {
           options: MapOptions(
             initialCenter: paris,
             initialZoom: 11,
-            onPositionChanged: _onPositionChanged, nativeParams: NativeParams(mapType: _baseMap.style, showsUserLocation: _showsUserLocation, apple: AppleMapParams(showsScale: true)),),
+            onPositionChanged: _onPositionChanged,
+            nativeParams: NativeParams(
+              mapType: _baseMap.style,
+              showsUserLocation: _showsUserLocation,
+              apple: AppleMapParams(showsScale: true),
+            ),
+          ),
           children: [
             if (_baseMap == BaseMap.osmTiles) osmTileLayer,
             const Positioned(

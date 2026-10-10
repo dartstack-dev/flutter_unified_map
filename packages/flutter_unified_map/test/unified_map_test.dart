@@ -28,7 +28,14 @@ void main() {
           minZoom: 3,
           maxZoom: 18,
           backgroundColor: Color(0xFF123456),
-          interactionOptions: InteractionOptions(flags: InteractiveFlag.drag | InteractiveFlag.pinchZoom), nativeParams: NativeParams(mapType: MapStyle.satellite, showsUserLocation: true, showsCompass: true, showsPointsOfInterest: false),),
+          interactionOptions: InteractionOptions(flags: InteractiveFlag.drag | InteractiveFlag.pinchZoom),
+          nativeParams: NativeParams(
+            mapType: MapStyle.satellite,
+            showsUserLocation: true,
+            showsCompass: true,
+            showsPointsOfInterest: false,
+          ),
+        ),
       ),
     );
     final options = fake.builtViews[fake.lastViewId]!;
@@ -40,10 +47,7 @@ void main() {
     expect(options.showsCompass, isTrue);
     expect(options.showsPointsOfInterest, isFalse);
     expect(options.backgroundColor, const Color(0xFF123456));
-    expect(
-      options.interaction,
-      const PlatformInteraction(flags: InteractiveFlag.drag | InteractiveFlag.pinchZoom),
-    );
+    expect(options.interaction, const PlatformInteraction(flags: InteractiveFlag.drag | InteractiveFlag.pinchZoom));
     expect(find.byKey(const ValueKey('fake-map')), findsOneWidget);
   });
 
@@ -286,7 +290,13 @@ void main() {
     final meters = fake.circles.values.firstWhere((c) => c.id.endsWith('/k:m'));
     final pixels = fake.circles.values.firstWhere((c) => c.id.endsWith('/1'));
     expect(meters.radiusMeters, 100);
-    final mpp10 = MapCamera(crs: const Epsg3857(), rotation: 0, center: LatLng(0, 0), zoom: 10, nonRotatedSize: Size(800, 600)).metersPerPixel(0);
+    final mpp10 = MapCamera(
+      crs: const Epsg3857(),
+      rotation: 0,
+      center: LatLng(0, 0),
+      zoom: 10,
+      nonRotatedSize: Size(800, 600),
+    ).metersPerPixel(0);
     expect(pixels.radiusMeters, closeTo(10 * mpp10, 1e-6));
 
     fake.moveTo(const PlatformCamera(center: LatLng(0, 0), zoom: 11));
@@ -429,9 +439,17 @@ void main() {
   testWidgets('option changes reach updateOptions once ready', (tester) async {
     await tester.pumpWidget(mapApp());
     fake.ready();
-    await tester.pumpWidget(mapApp(options: const MapOptions( nativeParams: NativeParams(mapType: MapStyle.none),)));
+    await tester.pumpWidget(
+      mapApp(
+        options: const MapOptions(nativeParams: NativeParams(mapType: MapStyle.none)),
+      ),
+    );
     expect(fake.optionUpdates.single.style, PlatformMapStyle.none);
-    await tester.pumpWidget(mapApp(options: const MapOptions( initialZoom: 3, nativeParams: NativeParams(mapType: MapStyle.none),)));
+    await tester.pumpWidget(
+      mapApp(
+        options: const MapOptions(initialZoom: 3, nativeParams: NativeParams(mapType: MapStyle.none)),
+      ),
+    );
     expect(fake.optionUpdates, hasLength(1), reason: 'initial camera changes are not options updates');
   });
 
@@ -668,7 +686,7 @@ void main() {
     await tester.pumpWidget(
       mapApp(
         controller: controller,
-        options: const MapOptions( nativeParams: NativeParams(mapType: MapStyle.none),),
+        options: const MapOptions(nativeParams: NativeParams(mapType: MapStyle.none)),
       ),
     );
     await tester.pump();
@@ -677,7 +695,7 @@ void main() {
     await tester.pumpWidget(
       mapApp(
         controller: controller,
-        options: const MapOptions( initialZoom: 4, nativeParams: NativeParams(mapType: MapStyle.none),),
+        options: const MapOptions(initialZoom: 4, nativeParams: NativeParams(mapType: MapStyle.none)),
       ),
     );
     expect(fake.optionUpdates.single.style, PlatformMapStyle.none, reason: 'the failed options go out again');

@@ -59,11 +59,7 @@ class _DemoShellState extends State<DemoShell> {
         NavigationDestination(icon: Icon(Icons.route_outlined), selectedIcon: Icon(Icons.route), label: 'Route'),
         NavigationDestination(icon: Icon(Icons.place_outlined), selectedIcon: Icon(Icons.place), label: 'Geometry'),
         NavigationDestination(icon: Icon(Icons.tune_outlined), selectedIcon: Icon(Icons.tune), label: 'Controls'),
-        NavigationDestination(
-          icon: Icon(Icons.public_outlined),
-          selectedIcon: Icon(Icons.public),
-          label: 'Europe',
-        ),
+        NavigationDestination(icon: Icon(Icons.public_outlined), selectedIcon: Icon(Icons.public), label: 'Europe'),
       ],
     ),
   );

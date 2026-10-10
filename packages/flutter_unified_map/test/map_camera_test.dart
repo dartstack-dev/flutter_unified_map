@@ -8,7 +8,13 @@ import 'package:flutter_unified_map/src/map/camera/camera_math.dart';
 
 void main() {
   group('MapCamera', () {
-    final camera = MapCamera(crs: const Epsg3857(), rotation: 0, center: LatLng(48.8566, 2.3522), zoom: 12, nonRotatedSize: Size(800, 600));
+    final camera = MapCamera(
+      crs: const Epsg3857(),
+      rotation: 0,
+      center: LatLng(48.8566, 2.3522),
+      zoom: 12,
+      nonRotatedSize: Size(800, 600),
+    );
 
     test('projects the center to the middle of the view', () {
       final p = camera.latLngToScreenOffset(camera.center);
@@ -60,10 +66,22 @@ void main() {
     });
 
     test('visibleBounds stops at the antimeridian, as flutter_map', () {
-      final east = MapCamera(crs: const Epsg3857(), rotation: 0, center: LatLng(0, 179), zoom: 5, nonRotatedSize: Size(800, 600));
+      final east = MapCamera(
+        crs: const Epsg3857(),
+        rotation: 0,
+        center: LatLng(0, 179),
+        zoom: 5,
+        nonRotatedSize: Size(800, 600),
+      );
       expect(east.visibleBounds.east, 180);
       expect(east.visibleBounds.west, lessThan(179));
-      final world = MapCamera(crs: const Epsg3857(), rotation: 0, center: LatLng(0, 0), zoom: 0, nonRotatedSize: Size(1000, 600));
+      final world = MapCamera(
+        crs: const Epsg3857(),
+        rotation: 0,
+        center: LatLng(0, 0),
+        zoom: 0,
+        nonRotatedSize: Size(1000, 600),
+      );
       expect((world.visibleBounds.west, world.visibleBounds.east), (-180.0, 180.0));
     });
 
@@ -113,7 +131,8 @@ void main() {
     const middlePoint = LatLng(45.0002, 4.0002);
 
     test('keeps the map maxZoom when the fit allows more, and centers the padded area for that zoom', () {
-      final camera = MapCamera(crs: const Epsg3857(), 
+      final camera = MapCamera(
+        crs: const Epsg3857(),
         center: LatLng(45, 4),
         zoom: 10,
         rotation: 30,
@@ -129,7 +148,13 @@ void main() {
     });
 
     test('padding larger than the view fits the whole view, centered', () {
-      final camera = MapCamera(crs: const Epsg3857(), center: LatLng(45, 4), zoom: 10, rotation: 10, nonRotatedSize: Size(400, 300));
+      final camera = MapCamera(
+        crs: const Epsg3857(),
+        center: LatLng(45, 4),
+        zoom: 10,
+        rotation: 10,
+        nonRotatedSize: Size(400, 300),
+      );
       final fit = CameraFit.coordinates(coordinates: points, padding: const EdgeInsets.only(bottom: 320));
       final solved = solveCameraFit(camera, fit);
       final fitted = camera.copyWith(center: solved.center, zoom: solved.zoom);

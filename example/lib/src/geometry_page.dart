@@ -158,7 +158,9 @@ class _GeometrySceneState extends State<GeometryScene> {
       onMapReady: widget.onMapReady,
       onMapLoaded: widget.onMapLoaded,
       onMapError: widget.onMapError,
-      onMapEvent: widget.onMapEvent, nativeParams: NativeParams(mapType: widget.mapStyle),),
+      onMapEvent: widget.onMapEvent,
+      nativeParams: NativeParams(mapType: widget.mapStyle),
+    ),
     children: [
       PolygonLayer<String>(
         hitNotifier: _polygonHits,

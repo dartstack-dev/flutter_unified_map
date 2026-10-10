@@ -169,7 +169,10 @@ void main() {
       expect((p.minZoom, p.maxZoom), (2.0, 18.0));
       expect(p.style, PMapStyle.muted);
       expect(p.backgroundColorArgb, 0x80112233);
-      expect(p.interaction.flags, PlatformInteraction.all & ~PlatformInteraction.rotate & ~PlatformInteraction.doubleTapZoom);
+      expect(
+        p.interaction.flags,
+        PlatformInteraction.all & ~PlatformInteraction.rotate & ~PlatformInteraction.doubleTapZoom,
+      );
       expect(p.interaction.tiltEnabled, isTrue);
       expect((p.padding.left, p.padding.top, p.padding.right, p.padding.bottom), (1.0, 2.0, 3.0, 4.0));
       expect(p.showsUserLocation, isTrue);

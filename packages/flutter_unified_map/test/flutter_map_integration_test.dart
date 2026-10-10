@@ -59,7 +59,12 @@ void main() {
     await tester.pumpWidget(
       mapApp(
         controller: controller,
-        options: MapOptions(initialCenter: _paris, initialZoom: 8, onMapReady: () => ready++, nativeParams: NativeParams(mapType: MapStyle.none),),
+        options: MapOptions(
+          initialCenter: _paris,
+          initialZoom: 8,
+          onMapReady: () => ready++,
+          nativeParams: NativeParams(mapType: MapStyle.none),
+        ),
         children: [
           const PolylineLayer(
             polylines: [

@@ -7,7 +7,13 @@ import 'package:flutter_unified_map_platform_interface/flutter_unified_map_platf
 import 'support/harness.dart';
 
 void main() {
-  final camera = MapCamera(crs: const Epsg3857(), rotation: 0, center: LatLng(0, 0), zoom: 10, nonRotatedSize: Size(800, 600));
+  final camera = MapCamera(
+    crs: const Epsg3857(),
+    rotation: 0,
+    center: LatLng(0, 0),
+    zoom: 10,
+    nonRotatedSize: Size(800, 600),
+  );
   LatLng at(double x, double y) => camera.screenOffsetToLatLng(Offset(x, y));
 
   group('polylines', () {
@@ -28,7 +34,13 @@ void main() {
     });
 
     test('a line across the antimeridian is hit where the map draws it', () {
-      final east = MapCamera(crs: const Epsg3857(), rotation: 0, center: LatLng(0, 179.9), zoom: 10, nonRotatedSize: Size(800, 600));
+      final east = MapCamera(
+        crs: const Epsg3857(),
+        rotation: 0,
+        center: LatLng(0, 179.9),
+        zoom: 10,
+        nonRotatedSize: Size(800, 600),
+      );
       final crossing = Polyline<String>(points: const [LatLng(0, 179.8), LatLng(0, -179.9)], hitValue: 'x');
       final onScreen = east.latLngToScreenOffset(const LatLng(0, 179.95));
       expect(hitPolylines(east, [crossing], onScreen, 10), [crossing]);

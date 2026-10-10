@@ -108,10 +108,7 @@ abstract final class EuropeColors {
   static const locationBlue = Color(0xFF1A73E8);
 }
 
-CameraFit _europeFit() => CameraFit.bounds(
-  bounds: europeBounds,
-  padding: const EdgeInsets.fromLTRB(28, 48, 28, 48),
-);
+CameraFit _europeFit() => CameraFit.bounds(bounds: europeBounds, padding: const EdgeInsets.fromLTRB(28, 48, 28, 48));
 
 class CapitalsScene extends StatelessWidget {
   const CapitalsScene({super.key});
@@ -154,8 +151,7 @@ class _CountrySceneState extends State<CountryScene> {
   static final _forced = String.fromEnvironment('EUROPE_HIGHLIGHT');
 
   final _hits = LayerHitNotifier<String>(null);
-  late CountryShape? _selected =
-      _forced.isEmpty ? null : europeCountries.where((c) => c.iso == _forced).firstOrNull;
+  late CountryShape? _selected = _forced.isEmpty ? null : europeCountries.where((c) => c.iso == _forced).firstOrNull;
 
   @override
   void dispose() {
@@ -186,10 +182,7 @@ class _CountrySceneState extends State<CountryScene> {
                   borderColor: EuropeColors.green,
                   borderStrokeWidth: country == _selected ? 3 : 1.5,
                   label: country == _selected ? country.name : null,
-                  labelStyle: text.titleSmall!.copyWith(
-                    color: const Color(0xFF14532D),
-                    fontWeight: FontWeight.w700,
-                  ),
+                  labelStyle: text.titleSmall!.copyWith(color: const Color(0xFF14532D), fontWeight: FontWeight.w700),
                   hitValue: country.iso,
                 ),
           ],
@@ -227,9 +220,7 @@ class RoutesScene extends StatelessWidget {
   const RoutesScene({super.key});
 
   static final _fit = CameraFit.bounds(
-    bounds: LatLngBounds.fromPoints(
-      [...commissionToParliament, ...commissionToCourt, ...commissionToEcb],
-    ),
+    bounds: LatLngBounds.fromPoints([...commissionToParliament, ...commissionToCourt, ...commissionToEcb]),
     padding: const EdgeInsets.fromLTRB(30, 60, 30, 40),
   );
 
@@ -341,7 +332,10 @@ class InstitutionBadge extends StatelessWidget {
         children: [
           Icon(Icons.account_balance, size: 12, color: color),
           const SizedBox(width: 4),
-          Text(label, style: text.labelSmall!.copyWith(fontWeight: FontWeight.w700, color: const Color(0xFF111111))),
+          Text(
+            label,
+            style: text.labelSmall!.copyWith(fontWeight: FontWeight.w700, color: const Color(0xFF111111)),
+          ),
         ],
       ),
     );
@@ -363,13 +357,12 @@ class _LocationSceneState extends State<LocationScene> with SingleTickerProvider
   /// when the headless simulator does not composite its framebuffer.
   static const _snapshot = bool.fromEnvironment('EUROPE_SNAPSHOT');
 
-  late final AnimationController _pulse = AnimationController(
-    vsync: this,
-    duration: const Duration(seconds: 4),
-  )..repeat(reverse: true);
-  late final Animation<double> _radius = Tween(begin: 25.0, end: 350.0).animate(
-    CurvedAnimation(parent: _pulse, curve: Curves.easeInOut),
-  );
+  late final AnimationController _pulse = AnimationController(vsync: this, duration: const Duration(seconds: 4))
+    ..repeat(reverse: true);
+  late final Animation<double> _radius = Tween(
+    begin: 25.0,
+    end: 350.0,
+  ).animate(CurvedAnimation(parent: _pulse, curve: Curves.easeInOut));
 
   final _controller = MapController();
   final _ready = Completer<void>();
@@ -419,11 +412,7 @@ class _LocationSceneState extends State<LocationScene> with SingleTickerProvider
     final text = Theme.of(context).textTheme;
     Widget map() => UnifiedMap(
       mapController: _controller,
-      options: MapOptions(
-        initialCenter: someoneAtStrasbourg,
-        initialZoom: 14.3,
-        onMapReady: () => _ready.complete(),
-      ),
+      options: MapOptions(initialCenter: someoneAtStrasbourg, initialZoom: 14.3, onMapReady: () => _ready.complete()),
       children: [
         CircleLayer(
           circles: [
