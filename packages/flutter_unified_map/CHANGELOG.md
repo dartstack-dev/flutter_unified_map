@@ -1,4 +1,4 @@
-## 0.1.0
+## 1.0.0
 
 - Initial release.
 - Aligned with flutter_map 8 before publishing: `MapEventSource.onDrag` / `onMultiFinger` (were `drag` /

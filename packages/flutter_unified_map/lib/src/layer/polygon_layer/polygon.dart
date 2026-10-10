@@ -76,7 +76,8 @@ class Polygon<R extends Object> {
         // ignore: deprecated_member_use
         PolygonLabelPlacement.centroid => const PolygonLabelPlacementCalculator.centroid(),
         // ignore: deprecated_member_use
-        PolygonLabelPlacement.centroidWithMultiWorld => const PolygonLabelPlacementCalculator.simpleMultiWorldCentroid(),
+        PolygonLabelPlacement.centroidWithMultiWorld =>
+          const PolygonLabelPlacementCalculator.simpleMultiWorldCentroid(),
         // ignore: deprecated_member_use
         PolygonLabelPlacement.polylabel => const PolygonLabelPlacementCalculator.polylabel(),
       };

@@ -15,7 +15,9 @@ InteractionOptions interactionOptions(PlatformInteraction interaction) => Intera
   keyboardOptions: interaction.has(PlatformInteraction.drag)
       ? const KeyboardOptions(autofocus: false)
       : const KeyboardOptions.disabled(),
-  cursorKeyboardRotationOptions: interaction.has(PlatformInteraction.rotate) ? const CursorKeyboardRotationOptions() : _noCursorRotation,
+  cursorKeyboardRotationOptions: interaction.has(PlatformInteraction.rotate)
+      ? const CursorKeyboardRotationOptions()
+      : _noCursorRotation,
 );
 
 MapOptions buildMapOptions(

@@ -1,4 +1,4 @@
-## 0.1.0
+## 1.0.0
 
 - Initial release: the `flutter_unified_map` implementation for web, Windows, Linux and widget tests, drawn with flutter_map 8.
 - Markers from rasterised icons, with fractional anchors, rotation, `flat`, `tappable`, zIndex order and animated transitions (`updateMarkers(..., transition:)`).

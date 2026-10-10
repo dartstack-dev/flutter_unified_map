@@ -35,7 +35,10 @@ class UnifiedMapsApple extends UnifiedMapsPlatform {
   void _listen() {
     if (_listening) return;
     _listening = true;
-    UnifiedMapsFlutterApi.setUp(FlutterApiHandler(_emit, (viewId) => _tileLoaders[viewId]), binaryMessenger: _binaryMessenger);
+    UnifiedMapsFlutterApi.setUp(
+      FlutterApiHandler(_emit, (viewId) => _tileLoaders[viewId]),
+      binaryMessenger: _binaryMessenger,
+    );
   }
 
   final Map<int, StreamController<PlatformMapEvent>> _controllers = {};
@@ -155,7 +158,9 @@ class UnifiedMapsApple extends UnifiedMapsPlatform {
 
   @override
   Future<void> updateGroundOverlays(int viewId, MapObjectUpdates<PlatformGroundOverlay> updates) async {
-    final images = {for (final overlay in [...updates.added, ...updates.changed]) overlay.image.key: overlay.image};
+    final images = {
+      for (final overlay in [...updates.added, ...updates.changed]) overlay.image.key: overlay.image,
+    };
     if (images.isNotEmpty) await _hostApi.registerIcons(viewId, images.values.map(toPIcon).toList(growable: false));
     await _hostApi.updateGroundOverlays(
       viewId,

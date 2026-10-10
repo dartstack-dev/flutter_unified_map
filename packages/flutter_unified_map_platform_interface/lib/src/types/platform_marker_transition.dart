@@ -33,7 +33,8 @@ class PlatformCurve {
   int get hashCode => Object.hash(x1, y1, x2, y2, samples == null ? null : Object.hashAll(samples!));
 
   @override
-  String toString() => samples == null ? 'PlatformCurve.cubic($x1, $y1, $x2, $y2)' : 'PlatformCurve.sampled(${samples!.length})';
+  String toString() =>
+      samples == null ? 'PlatformCurve.cubic($x1, $y1, $x2, $y2)' : 'PlatformCurve.sampled(${samples!.length})';
 }
 
 /// Animates a marker update, so clusters can split and merge like flutter_map_marker_cluster's.

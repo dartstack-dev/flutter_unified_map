@@ -217,9 +217,7 @@ PlatformTileLayer toPlatformTileLayer(TileLayer layer, String id, double zIndex,
       RetinaMode.server => PlatformRetinaMode.server,
       RetinaMode.simulation => PlatformRetinaMode.simulation,
     },
-    tileBounds: bounds == null
-        ? null
-        : PlatformLatLngBounds(southWest: bounds.southWest, northEast: bounds.northEast),
+    tileBounds: bounds == null ? null : PlatformLatLngBounds(southWest: bounds.southWest, northEast: bounds.northEast),
     dartProvided: !native,
     fadeIn: display is FadeInTileDisplay,
     flutterMapLayer: flutterMapLayer,

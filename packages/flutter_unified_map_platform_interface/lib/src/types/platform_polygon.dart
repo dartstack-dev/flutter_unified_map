@@ -3,7 +3,8 @@ import 'package:latlong2/latlong.dart';
 import 'package:meta/meta.dart';
 
 import 'platform_map_object.dart';
-import 'platform_polyline.dart' show PlatformStrokeCap, PlatformStrokeJoin, sameDashPatterns, samePointLists, samePoints;
+import 'platform_polyline.dart'
+    show PlatformStrokeCap, PlatformStrokeJoin, sameDashPatterns, samePointLists, samePoints;
 
 /// A filled area drawn natively, with optional [holes]. [strokeWidth] is in logical pixels; every ring (outer and
 /// holes) is stroked. The core draws flutter_map's `disableHolesBorder` by composition (stroke width 0 plus

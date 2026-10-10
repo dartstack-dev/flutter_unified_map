@@ -1,4 +1,4 @@
-## 0.1.0
+## 1.0.0
 
 - Initial release: `flutter_unified_map` on Apple MapKit for iOS 15+ and macOS 12+.
 - Markers from rasterised icons, with anchor, rotation, flat markers, zIndex and native taps.

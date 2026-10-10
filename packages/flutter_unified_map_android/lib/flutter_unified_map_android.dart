@@ -136,7 +136,9 @@ class UnifiedMapsAndroid extends UnifiedMapsPlatform {
 
   @override
   Future<void> updateGroundOverlays(int viewId, MapObjectUpdates<PlatformGroundOverlay> updates) async {
-    final images = {for (final overlay in [...updates.added, ...updates.changed]) overlay.image.key: overlay.image};
+    final images = {
+      for (final overlay in [...updates.added, ...updates.changed]) overlay.image.key: overlay.image,
+    };
     if (images.isNotEmpty) await _hostApi.registerIcons(viewId, images.values.map(toPIcon).toList(growable: false));
     await _hostApi.updateGroundOverlays(
       viewId,

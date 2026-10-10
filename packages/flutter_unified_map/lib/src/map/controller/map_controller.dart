@@ -55,7 +55,13 @@ abstract class MapController {
   MoveAndRotateResult rotateAroundPoint(double degree, {Offset? offset, String? id});
 
   /// [move] and [rotate] in one camera update. [offset] is an addition to flutter_map's API.
-  MoveAndRotateResult moveAndRotate(LatLng center, double zoom, double degree, {Offset offset = Offset.zero, String? id});
+  MoveAndRotateResult moveAndRotate(
+    LatLng center,
+    double zoom,
+    double degree, {
+    Offset offset = Offset.zero,
+    String? id,
+  });
 
   /// Moves the camera so that [cameraFit] is satisfied, without animation. Returns false when the fit has no
   /// coordinates.
@@ -119,7 +125,12 @@ abstract class MapController {
   });
 
   /// Turns the map back to north.
-  Future<void> animatedRotateReset({Curve? curve, String? customId, Duration? duration, bool? cancelPreviousAnimations});
+  Future<void> animatedRotateReset({
+    Curve? curve,
+    String? customId,
+    Duration? duration,
+    bool? cancelPreviousAnimations,
+  });
 
   /// One zoom level in.
   Future<void> animatedZoomIn({Curve? curve, String? customId, Duration? duration, bool? cancelPreviousAnimations});

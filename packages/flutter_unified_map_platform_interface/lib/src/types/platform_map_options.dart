@@ -314,7 +314,11 @@ class PlatformFlutterMapOptions {
   final Object cameraConstraint;
   final Object interactionOptions;
 
-  const PlatformFlutterMapOptions({required this.crs, required this.cameraConstraint, required this.interactionOptions});
+  const PlatformFlutterMapOptions({
+    required this.crs,
+    required this.cameraConstraint,
+    required this.interactionOptions,
+  });
 
   @override
   bool operator ==(Object other) =>
