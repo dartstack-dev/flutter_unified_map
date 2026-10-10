@@ -2,7 +2,10 @@
 
 Native maps for Flutter with a [flutter_map](https://pub.dev/packages/flutter_map)-style API: Google Maps on Android, Apple MapKit on iOS and macOS, flutter_map on web and desktop.
 
-See the [repository README](https://github.com/AlphaByte/flutter_unified_map) for the full guide.
+See the [repository README](https://github.com/dartstack-dev/flutter_unified_map) for the full guide.
+
+![The example app's stations scene over Apple MapKit](https://raw.githubusercontent.com/dartstack-dev/flutter_unified_map/main/screenshots/stations.png)
+![The example app's Europe scene over Apple MapKit](https://raw.githubusercontent.com/dartstack-dev/flutter_unified_map/main/screenshots/europe.png)
 
 ```dart
 import 'package:flutter/material.dart';

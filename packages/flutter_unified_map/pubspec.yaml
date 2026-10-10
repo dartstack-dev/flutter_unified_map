@@ -1,12 +1,17 @@
 name: flutter_unified_map
 description: Native maps for Flutter with a flutter_map-style API - Google Maps on Android, Apple MapKit on iOS and macOS, flutter_map on web and desktop. Markers, polylines, polygons, tiles.
 version: 1.0.0
-repository: https://github.com/AlphaByte/flutter_unified_map
+repository: https://github.com/dartstack-dev/flutter_unified_map
 topics:
   - map
   - google-maps
   - mapkit
   - flutter-plugin
+screenshots:
+  - description: "The example app's stations scene on the iPhone simulator: 300 markers in one MarkerLayer, drawn natively over Apple MapKit"
+    path: screenshots/stations.png
+  - description: "The example app's Europe scene on the iPhone simulator: capital pins, routes and polygons over Apple MapKit"
+    path: screenshots/europe.png
 resolution: workspace
 
 environment:

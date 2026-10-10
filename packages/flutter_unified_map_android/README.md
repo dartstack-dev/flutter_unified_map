@@ -7,7 +7,7 @@ Apps depend on `flutter_unified_map`; this package is endorsed and picked automa
 ## Setup
 
 Step-by-step guide with the Gradle snippet and troubleshooting:
-[repository README](https://github.com/AlphaByte/flutter_unified_map#2-android-google-maps-api-key).
+[repository README](https://github.com/dartstack-dev/flutter_unified_map#2-android-google-maps-api-key).
 
 1. Create a key for the **Maps SDK for Android** in the Google Cloud console (the project needs billing enabled; the
    "Mobile Native Dynamic Maps" SKU itself is free and unlimited). Restrict it to your package name and signing
