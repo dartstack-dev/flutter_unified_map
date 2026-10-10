@@ -8,8 +8,9 @@ Native maps for Flutter with a [flutter_map](https://pub.dev/packages/flutter_ma
 | iOS, macOS | Apple MapKit | `flutter_unified_map_apple` |
 | Web, Windows, Linux, tests | flutter_map (OpenStreetMap tiles) | `flutter_unified_map_flutter_map` |
 
-<img src="https://raw.githubusercontent.com/dartstack-dev/flutter_unified_map/main/screenshots/stations.png" alt="The example app's stations scene over Apple MapKit" width="230" height="500">
-<img src="https://raw.githubusercontent.com/dartstack-dev/flutter_unified_map/main/screenshots/europe.png" alt="The example app's Europe scene over Apple MapKit" width="230" height="500">
+| Stations | Europe |
+|---|---|
+| <img src="https://raw.githubusercontent.com/dartstack-dev/flutter_unified_map/main/screenshots/stations.png" alt="The example app's stations scene over Apple MapKit" width="230" height="500"> | <img src="https://raw.githubusercontent.com/dartstack-dev/flutter_unified_map/main/screenshots/europe.png" alt="The example app's Europe scene over Apple MapKit" width="230" height="500"> |
 
 ```dart
 UnifiedMap(
