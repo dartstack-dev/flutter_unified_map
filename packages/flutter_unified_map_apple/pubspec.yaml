@@ -2,6 +2,8 @@ name: flutter_unified_map_apple
 description: iOS and macOS implementation of flutter_unified_map on Apple MapKit (MKMapView).
 version: 1.0.0
 repository: https://github.com/dartstack-dev/flutter_unified_map
+homepage: https://dartstack.dev/unified_map
+documentation: https://dartstack.dev/unified_map/latest/getting-started/overview
 issue_tracker: https://github.com/dartstack-dev/flutter_unified_map/issues
 topics:
   - maps
