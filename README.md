@@ -8,9 +8,10 @@ Native maps for Flutter with a [flutter_map](https://pub.dev/packages/flutter_ma
 | iOS, macOS | Apple MapKit | `flutter_unified_map_apple` |
 | Web, Windows, Linux, tests | flutter_map (OpenStreetMap tiles) | `flutter_unified_map_flutter_map` |
 
-| Stations | Europe |
-|---|---|
-| <img src="https://raw.githubusercontent.com/dartstack-dev/flutter_unified_map/main/screenshots/stations.png" alt="The example app's stations scene over Apple MapKit" width="230" height="500"> | <img src="https://raw.githubusercontent.com/dartstack-dev/flutter_unified_map/main/screenshots/europe.png" alt="The example app's Europe scene over Apple MapKit" width="230" height="500"> |
+|  | Apple MapKit (iOS) | Google Maps (Android) |
+|---|---|---|
+| `OverlayImageLayer` over Europe | <img src="https://raw.githubusercontent.com/dartstack-dev/flutter_unified_map/main/screenshots/europe-overlay-ios.png" alt="The European flag draped over the EU member states" height="500"> | <img src="https://raw.githubusercontent.com/dartstack-dev/flutter_unified_map/main/screenshots/europe-overlay-android.png" alt="The European flag draped over the EU member states, on Google Maps" height="500"> |
+| Geometry, camera fitted to the route | <img src="https://raw.githubusercontent.com/dartstack-dev/flutter_unified_map/main/screenshots/geometry-route-ios.png" alt="The geometry scene: pins, shapes and the Paris → Lyon → Marseille route filling the view" height="500"> | <img src="https://raw.githubusercontent.com/dartstack-dev/flutter_unified_map/main/screenshots/geometry-route-android.png" alt="The geometry scene on Google Maps: pins, shapes and the Paris → Lyon → Marseille route filling the view" height="500"> |
 
 ```dart
 UnifiedMap(
@@ -26,7 +27,7 @@ UnifiedMap(
 
 Marker children are ordinary Flutter widgets: the core rasterises them once per `iconKey` and hands the bitmap to the native map. Layers that flutter_map users know (`MarkerLayer`, `PolylineLayer`, `PolygonLayer`, `CircleLayer`, `TileLayer`) keep their names and fields; any other child is drawn above the map in a `Stack`.
 
-`MapCamera.rotation` keeps flutter_map's meaning on every platform. What runs where, what has been verified, and the known limitations are listed in [STATUS.md](STATUS.md).
+`MapCamera.rotation` keeps flutter_map's meaning on every platform.
 
 ## Clustering
 
@@ -207,4 +208,4 @@ cd example && flutter run
 
 ## License
 
-MIT. Successor of the Xamarin.Forms [UnifiedMaps](https://github.com/fivenine-zurich/UnifiedMaps).
+MIT. The API is modeled on [flutter_map](https://pub.dev/packages/flutter_map); credit to its authors and contributors.

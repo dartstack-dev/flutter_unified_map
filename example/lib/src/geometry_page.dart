@@ -6,13 +6,36 @@ import 'package:flutter_unified_map/flutter_unified_map.dart';
 import 'package:flutter_unified_map_example/src/geometry_data.dart';
 import 'package:flutter_unified_map_example/src/map_widgets.dart';
 
-class GeometryPage extends StatelessWidget {
+/// `--dart-define=GEOMETRY_SCENE=fit`: opens on this page with the control panel hidden and the camera fitted
+/// to the route, for the documentation screenshots. Empty in interactive runs.
+const _geometryScene = String.fromEnvironment('GEOMETRY_SCENE');
+final _fitRouteScene = _geometryScene.isNotEmpty;
+
+/// `routeCameraFit` clears the bottom 200 px for the control panel; without the panel the route fits tighter.
+final _docsCameraFit = CameraFit.bounds(bounds: LatLngBounds.fromPoints(itinerary), padding: const EdgeInsets.all(24));
+
+class GeometryPage extends StatefulWidget {
   const GeometryPage({super.key});
 
   @override
+  State<GeometryPage> createState() => _GeometryPageState();
+}
+
+class _GeometryPageState extends State<GeometryPage> {
+  final _controller = MapController();
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) => GeometryScene(
+    controller: _controller,
     onMarkerTap: (name) => _show(context, 'Marker $name'),
     onMapError: (error) => debugPrint('Map error: $error'),
+    onMapLoaded: _fitRouteScene ? () => _controller.fitCamera(_docsCameraFit) : null,
   );
 
   static void _show(BuildContext context, String message) => ScaffoldMessenger.of(context)
@@ -226,15 +249,16 @@ class _GeometrySceneState extends State<GeometryScene> {
         ],
       ),
       MarkerLayer(markers: _markers, rotate: true),
-      Positioned(
-        left: 12,
-        right: 12,
-        bottom: 12,
-        child: SafeArea(
-          top: false,
-          child: _Panel(status: _status, onFit: _fitRoute, onRotate: _rotate, onReset: _reset),
+      if (!_fitRouteScene)
+        Positioned(
+          left: 12,
+          right: 12,
+          bottom: 12,
+          child: SafeArea(
+            top: false,
+            child: _Panel(status: _status, onFit: _fitRoute, onRotate: _rotate, onReset: _reset),
+          ),
         ),
-      ),
     ],
   );
 }

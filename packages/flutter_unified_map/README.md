@@ -4,9 +4,10 @@ Native maps for Flutter with a [flutter_map](https://pub.dev/packages/flutter_ma
 
 See the [repository README](https://github.com/dartstack-dev/flutter_unified_map) for the full guide.
 
-| Stations | Europe |
-|---|---|
-| <img src="https://raw.githubusercontent.com/dartstack-dev/flutter_unified_map/main/screenshots/stations.png" alt="The example app's stations scene over Apple MapKit" width="230" height="500"> | <img src="https://raw.githubusercontent.com/dartstack-dev/flutter_unified_map/main/screenshots/europe.png" alt="The example app's Europe scene over Apple MapKit" width="230" height="500"> |
+|  | Apple MapKit (iOS) | Google Maps (Android) |
+|---|---|---|
+| `OverlayImageLayer` over Europe | <img src="https://raw.githubusercontent.com/dartstack-dev/flutter_unified_map/main/screenshots/europe-overlay-ios.png" alt="The European flag draped over the EU member states" height="500"> | <img src="https://raw.githubusercontent.com/dartstack-dev/flutter_unified_map/main/screenshots/europe-overlay-android.png" alt="The European flag draped over the EU member states, on Google Maps" height="500"> |
+| Geometry, camera fitted to the route | <img src="https://raw.githubusercontent.com/dartstack-dev/flutter_unified_map/main/screenshots/geometry-route-ios.png" alt="The geometry scene: pins, shapes and the Paris → Lyon → Marseille route filling the view" height="500"> | <img src="https://raw.githubusercontent.com/dartstack-dev/flutter_unified_map/main/screenshots/geometry-route-android.png" alt="The geometry scene on Google Maps: pins, shapes and the Paris → Lyon → Marseille route filling the view" height="500"> |
 
 ```dart
 import 'package:flutter/material.dart';

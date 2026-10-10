@@ -36,7 +36,11 @@ class DemoShell extends StatefulWidget {
 }
 
 class _DemoShellState extends State<DemoShell> {
-  var _index = const String.fromEnvironment('EUROPE_SCENE').isEmpty ? 0 : 4;
+  var _index = const String.fromEnvironment('EUROPE_SCENE').isNotEmpty
+      ? 4
+      : const String.fromEnvironment('GEOMETRY_SCENE').isNotEmpty
+      ? 2
+      : 0;
 
   @override
   Widget build(BuildContext context) => Scaffold(
